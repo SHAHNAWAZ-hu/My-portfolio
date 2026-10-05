@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Mayuresh Mene by email, LinkedIn, GitHub, or phone.">
+    <title>Contact | Mayuresh Mene</title><link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header"><nav class="nav" aria-label="Primary navigation"><a class="brand" href="index.html">Mayuresh Mene</a><div class="nav-links"><a href="about.html">About</a><a href="skills.html">Skills</a><a href="projects.html">Projects</a><a href="education.html">Education</a><a href="certificates.html">Certificates</a><a href="contact.html" aria-current="page">Contact</a></div></nav></header>
+<main class="page"><div class="page-intro"><p class="eyebrow">Contact</p><h1>Let's talk about a project</h1><p>You can reach me directly through the details below. The form opens your email application and does not pretend to send data to a server.</p></div>
+<div class="contact-grid"><div class="contact-details"><div class="contact-item"><span class="contact-label">Email</span><a href="mailto:mayureshmene04@gmail.com">mayureshmene04@gmail.com</a></div><div class="contact-item"><span class="contact-label">Phone</span><a href="tel:+919820690396">+91 98206 90396</a></div><div class="contact-item"><span class="contact-label">LinkedIn</span><a href="https://www.linkedin.com/in/contact-mayuresh-mene/" target="_blank" rel="noopener noreferrer">LinkedIn profile</a></div><div class="contact-item"><span class="contact-label">GitHub</span><a href="https://github.com/Mayuresh437" target="_blank" rel="noopener noreferrer">GitHub profile</a></div></div>
+<form id="contact-form" novalidate><div class="field"><label for="name">Name</label><input id="name" name="name" type="text" autocomplete="name" required></div><div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div><div class="field"><label for="message">Message</label><textarea id="message" name="message" required></textarea></div><button class="submit" type="submit">Open email draft</button><p id="form-message" class="form-message" role="alert" aria-live="polite"></p></form></div></main>
+<footer class="site-footer"><div class="footer-inner">Mayuresh Mene · <a href="index.html">Home</a></div></footer>
+<script>
+const form = document.getElementById('contact-form');
+const status = document.getElementById('form-message');
+form.addEventListener('submit', function (event) {
+    event.preventDefault();
+    status.className = 'form-message';
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+    if (!name || !email || !message) {
+        status.textContent = 'Please complete your name, email address, and message.';
+        status.classList.add('error');
+        return;
+    }
+    if (!/^\S+@\S+\.\S+$/.test(email)) {
+        status.textContent = 'Please enter a valid email address.';
+        status.classList.add('error');
+        return;
+    }
+    const subject = encodeURIComponent('Portfolio enquiry from ' + name);
+    const body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\n' + message);
+    status.textContent = 'Opening your email application...';
+    status.classList.add('success');
+    window.location.href = 'mailto:mayureshmene04@gmail.com?subject=' + subject + '&body=' + body;
+});
+</script>
+</body></html>
