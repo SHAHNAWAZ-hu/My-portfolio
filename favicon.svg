@@ -1,4 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <rect width="64" height="64" fill="#8A5A00"/>
-  <path d="M44 20H24C20 20 17 23 17 27C17 31 20 33 24 34L38 37C40 37 41 38 41 40C41 42 40 44 37 44H17V38H36C38 38 39 37 39 35C39 34 38 33 36 33L22 30C18 29 16 27 16 24C16 20 19 18 23 18H44V20Z" fill="#F4F4F1"/>
+  <text x="32" y="45"
+        text-anchor="middle"
+        font-family="Arial, sans-serif"
+        font-size="36"
+        font-weight="bold"
+        fill="#F4F4F1">S</text>
 </svg>
